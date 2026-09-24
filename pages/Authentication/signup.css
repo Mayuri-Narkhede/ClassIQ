@@ -1,0 +1,502 @@
+/* ================================
+   Signup Page
+================================ */
+
+.signup-page {
+    min-height: calc(100vh - 160px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 20px;
+    background-color: #f7f7f7;
+}
+
+
+/* ================================
+   Signup Card
+================================ */
+
+.signup-card {
+    width: 399px;
+    height: 495px;
+
+    background: #ECEDEF;
+
+    border-radius: 22px;
+
+    padding: 32px 36px;
+
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   Title
+================================ */
+
+.signup-card h1 {
+    margin: 0 0 28px;
+
+    text-align: center;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    color: #171717;
+}
+
+
+/* ================================
+   Form
+================================ */
+
+.form-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    color: #222;
+}
+
+
+/* ================================
+   Input
+================================ */
+
+.form-group input {
+    width: 100%;
+    height: 44px;
+
+    padding: 0 14px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #D0D0D0;
+    border-radius: 8px;
+
+    background: #FFFFFF;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+    border-color: #9CCF45;
+
+    box-shadow: 0 0 0 2px rgba(194, 245, 120, 0.25);
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+
+/* ================================
+   Password
+================================ */
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 45px;
+}
+
+.password-toggle {
+    position: absolute;
+
+    right: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    padding: 4px;
+}
+
+
+/* ================================
+   Validation Error
+================================ */
+
+.error-message {
+    display: none;
+
+    margin: 7px 0 0;
+
+    color: #E53935;
+
+    font-size: 12px;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.error-message span {
+    width: 15px;
+    height: 15px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #E53935;
+
+    color: white;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* Show error */
+
+.form-group.error .error-message {
+    display: flex;
+}
+
+.form-group.error input {
+    border-color: #E53935;
+}
+
+.form-group .error-icon {
+    display: none;
+    position: absolute;
+    right: 12px;
+    top: 38px; /* Adjust based on your label height */
+    width: 20px;
+    height: 20px;
+    background-color: #ff4d4d;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.form-group.error .password-wrapper + .error-icon {
+    top: 38px;
+    right: 42px; /* Position next to the password toggle eye button */
+}
+
+.error-tooltip {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px); /* Float right below the input field */
+    left: 20px;            /* Slight indent from the left */
+    z-index: 10;
+    
+    /* Popover Container Styling */
+    background-color: #ffffff;
+    border: 1px solid #707070;
+    border-radius: 6px;
+    padding: 8px 14px;
+    
+    /* Flexbox layout for icon + text */
+    display: none;
+    align-items: center;
+    gap: 10px;
+    
+    /* Soft Drop Shadow */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    white-space: nowrap;
+}
+
+/* Top Pointer Arrow */
+.error-tooltip::before,
+.error-tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 20px;
+    border: solid transparent;
+    height: 0;
+    width: 0;
+    pointer-events: none;
+}
+
+.error-tooltip::before {
+    border-color: rgba(112, 112, 112, 0);
+    border-bottom-color: #707070; /* Matches border color */
+    border-width: 7px;
+    margin-left: -7px;
+}
+
+.error-tooltip::after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #ffffff; /* Matches tooltip background */
+    border-width: 6px;
+    margin-left: -6px;
+}
+
+/* Red/Orange Exclamation Icon Square */
+.error-tooltip .icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background-color: #e65100; /* Vibrant orange/red color */
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+/* Text Styling */
+.error-tooltip .error-text {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Show tooltip when JS applies the .error class */
+.form-group.error .error-tooltip {
+    display: flex;
+}
+
+/* ================================
+   Signup Button
+================================ */
+
+.signup-button {
+    width: 327px;
+    max-width: 100%;
+
+    height: 44px;
+
+    margin-top: 5px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #C2F578;
+
+    padding: 11px 26px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    color: #171717;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease,
+                transform 0.1s ease;
+}
+
+.signup-button:hover {
+    background: #B5ED65;
+}
+
+.signup-button:active {
+    transform: scale(0.99);
+}
+
+
+/* ================================
+   Login Text
+================================ */
+
+.login-text {
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #555;
+}
+
+.login-text a {
+    color: #171717;
+
+    font-weight: 600;
+
+    text-decoration: underline;
+}
+
+.login-text a:hover {
+    color: #6C8E2C;
+}
+
+/* ================================
+   Input Error Wrapper
+================================ */
+
+.input-error-wrapper {
+    position: relative;
+}
+
+
+/* ================================
+   Error Icon
+================================ */
+
+.error-icon {
+    display: none;
+
+    position: absolute;
+
+    right: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: #E53935;
+    color: #FFFFFF;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: help;
+
+    z-index: 5;
+}
+
+
+/* Show error icon */
+
+.form-group.error .error-icon {
+    display: block;
+}
+
+
+/* Red border when invalid */
+
+.form-group.error input {
+    border-color: #E53935;
+}
+
+
+/* ================================
+   Tooltip
+================================ */
+
+.error-icon::after {
+    content: attr(title);
+
+    position: absolute;
+
+    right: 0;
+    bottom: calc(100% + 8px);
+
+    width: max-content;
+
+    max-width: 220px;
+
+    padding: 8px 12px;
+
+    border-radius: 6px;
+
+    background: #333333;
+    color: #FFFFFF;
+
+    font-size: 12px;
+    font-weight: 400;
+
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition: opacity 0.2s ease,
+                visibility 0.2s ease;
+}
+
+
+/* Tooltip arrow */
+
+.error-icon::before {
+    content: "";
+
+    position: absolute;
+
+    right: 5px;
+    bottom: calc(100% + 3px);
+
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333333;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.2s ease,
+                visibility 0.2s ease;
+}
+
+
+/* Show tooltip */
+
+.error-icon:hover::after,
+.error-icon:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ================================
+   Responsive
+================================ */
+
+@media (max-width: 500px) {
+
+    .signup-page {
+        padding: 40px 16px;
+    }
+
+    .signup-card {
+        width: 100%;
+        height: auto;
+
+        min-height: 495px;
+
+        padding: 30px 25px;
+    }
+
+    .signup-button {
+        width: 100%;
+    }
+}

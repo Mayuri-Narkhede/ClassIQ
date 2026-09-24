@@ -1,0 +1,434 @@
+/* ================================
+   Login Page
+================================ */
+
+.login-page {
+    min-height: calc(100vh - 160px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 20px;
+
+    background-color: #f7f7f7;
+}
+
+
+/* ================================
+   Login Card
+================================ */
+
+.login-card {
+    width: 399px;
+    height: 430px;
+
+    background: #ECEDEF;
+
+    border-radius: 22px;
+
+    padding: 32px 36px;
+
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   Title
+================================ */
+
+.login-card h1 {
+    margin: 0 0 28px;
+
+    text-align: center;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    color: #171717;
+}
+
+
+/* ================================
+   Form
+================================ */
+
+.login-form {
+    width: 100%;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    color: #222;
+}
+
+
+/* ================================
+   Input
+================================ */
+
+.form-group input {
+    width: 100%;
+    height: 44px;
+
+    padding: 0 14px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #D0D0D0;
+    border-radius: 8px;
+
+    background: #FFFFFF;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.form-group input:focus {
+    border-color: #9CCF45;
+
+    box-shadow:
+        0 0 0 2px rgba(194, 245, 120, 0.25);
+}
+
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+
+/* ================================
+   Password
+================================ */
+
+.password-wrapper {
+    position: relative;
+}
+
+
+.password-wrapper input {
+    padding-right: 45px;
+}
+
+
+.password-toggle {
+    position: absolute;
+
+    right: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    padding: 4px;
+}
+
+
+/* ================================
+   Validation Error
+================================ */
+
+.error-message {
+    display: none;
+
+    margin: 7px 0 0;
+
+    color: #E53935;
+
+    font-size: 12px;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+.error-message span {
+    width: 15px;
+    height: 15px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #E53935;
+
+    color: #FFFFFF;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* Show error */
+
+.form-group.error .error-message {
+    display: flex;
+}
+
+
+.form-group.error input {
+    border-color: #E53935;
+}
+
+
+/* ================================
+   Input Error Wrapper
+================================ */
+
+.input-error-wrapper {
+    position: relative;
+}
+
+
+/* ================================
+   Error Icon
+================================ */
+
+.error-icon {
+    display: none;
+
+    position: absolute;
+
+    right: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: #E53935;
+
+    color: #FFFFFF;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: help;
+
+    z-index: 5;
+}
+
+
+/* Show error icon */
+
+.form-group.error .error-icon {
+    display: flex;
+}
+
+
+/* Red border */
+
+.form-group.error input {
+    border-color: #E53935;
+}
+
+
+/* ================================
+   Tooltip
+================================ */
+
+.error-icon::after {
+    content: attr(title);
+
+    position: absolute;
+
+    right: 0;
+    bottom: calc(100% + 8px);
+
+    width: max-content;
+
+    max-width: 220px;
+
+    padding: 8px 12px;
+
+    border-radius: 6px;
+
+    background: #333333;
+
+    color: #FFFFFF;
+
+    font-size: 12px;
+    font-weight: 400;
+
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+
+
+/* Tooltip arrow */
+
+.error-icon::before {
+    content: "";
+
+    position: absolute;
+
+    right: 5px;
+    bottom: calc(100% + 3px);
+
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333333;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+
+
+/* Show tooltip */
+
+.error-icon:hover::after,
+.error-icon:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ================================
+   Login Button
+================================ */
+
+.login-button {
+    width: 327px;
+    max-width: 100%;
+
+    height: 44px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #C2F578;
+
+    padding: 11px 26px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    color: #171717;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease;
+}
+
+
+.login-button:hover {
+    background: #B5ED65;
+}
+
+
+.login-button:active {
+    transform: scale(0.99);
+}
+
+
+/* ================================
+   Signup Text
+================================ */
+
+.signup-text {
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #555;
+}
+
+
+.signup-text a {
+    color: #171717;
+
+    font-weight: 600;
+
+    text-decoration: underline;
+}
+
+
+.signup-text a:hover {
+    color: #6C8E2C;
+}
+
+
+/* ================================
+   Responsive
+================================ */
+
+@media (max-width: 500px) {
+
+    .login-page {
+        padding: 40px 16px;
+    }
+
+
+    .login-card {
+        width: 100%;
+
+        height: auto;
+
+        min-height: 430px;
+
+        padding: 30px 25px;
+    }
+
+
+    .login-button {
+        width: 100%;
+    }
+
+}

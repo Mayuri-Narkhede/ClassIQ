@@ -1,0 +1,554 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* =========================
+   Global
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* =========================
+   Navbar
+========================= */
+
+.navbar {
+    width: 100%;
+    height: 72px;
+    background-color: #f7f7f7;
+    /* border-bottom: 1px solid #e5e5e5; */
+}
+
+.navbar-container {
+    width: 84%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================
+   Brand
+========================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    text-decoration: none;
+    color: #111111;
+}
+
+.brand-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #b8f55c;
+    border-radius: 6px;
+
+    color: #111111;
+}
+
+.brand-name {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    font: 'Inter';
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.site-footer {
+    width: 100%;
+
+    background: #f7f7f7;
+
+    color: #222222;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   FOOTER MAIN CONTAINER
+===================================================== */
+
+.footer-container {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 35px 40px 60px;
+
+    display: grid;
+
+    grid-template-columns: 2.2fr 1fr 0.7fr;
+
+    column-gap: 80px;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   FOOTER LOGO
+===================================================== */
+
+.footer-logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    text-decoration: none;
+
+    color: #2c2c2c;
+
+    margin-bottom: 25px;
+}
+
+
+.footer-logo-icon {
+    width: 54px;
+    height: 54px;
+
+    background: #b7ff3c;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    color: #222222;
+}
+
+
+.footer-logo-text {
+    font-size: 31px;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+}
+
+
+/* =====================================================
+   SUBSCRIBE
+===================================================== */
+
+.subscribe-content h3 {
+    margin: 0 0 14px;
+
+    font-size: 21px;
+
+    font-weight: 600;
+
+    color: #222222;
+}
+
+
+.subscribe-content p {
+    margin: 0 0 27px;
+
+    max-width: 750px;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    color: #8e8e9b;
+}
+
+
+/* =====================================================
+   SUBSCRIBE FORM
+===================================================== */
+
+.subscribe-form {
+    width: 470px;
+    max-width: 100%;
+
+    height: 55px;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    padding: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    box-sizing: border-box;
+}
+
+
+.subscribe-form input {
+    flex: 1;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    padding: 0 24px;
+
+    background: transparent;
+
+    font-family: inherit;
+
+    font-size: 20px;
+
+    color: #333333;
+}
+
+
+.subscribe-form input::placeholder {
+    color: #9ba0b0;
+
+    opacity: 1;
+}
+
+
+.subscribe-form button {
+    width: 110px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #b7ff3c;
+
+    color: #222222;
+
+    font-family: inherit;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.subscribe-form button:hover {
+    background: #a9ed32;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   FOOTER COLUMNS
+===================================================== */
+
+.footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+
+.footer-column h3 {
+    margin: 4px 0 20px;
+
+    font-size: 23px;
+
+    font-weight: 600;
+
+    color: #222222;
+}
+
+
+.footer-column a {
+    margin-bottom: 20px;
+
+    color: #222222;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    line-height: 1.3;
+}
+
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   FOOTER BOTTOM
+===================================================== */
+
+.footer-bottom {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 48px 40px 43px;
+
+    border-top: 1px solid #e4e4e4;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    box-sizing: border-box;
+}
+
+
+.footer-bottom p {
+    margin: 0;
+
+    font-size: 19px;
+
+    color: #222222;
+}
+
+
+/* =====================================================
+   SOCIAL LINKS
+===================================================== */
+
+.social-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.social-links a {
+    width: 48px;
+    height: 48px;
+
+    background: #b7ff3c;
+
+    color: #111111;
+
+    text-decoration: none;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    border-radius: 3px;
+
+    transition: all 0.2s ease;
+}
+
+
+.social-links a:hover {
+    background: #a9ed32;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   RESPONSIVE FOOTER
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+
+        row-gap: 45px;
+
+        column-gap: 50px;
+    }
+
+    .footer-subscribe {
+        grid-column: 1 / -1;
+    }
+
+    .subscribe-form {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        padding: 35px 25px 45px;
+
+        row-gap: 35px;
+    }
+
+
+    .footer-subscribe {
+        grid-column: auto;
+    }
+
+
+    .footer-logo-text {
+        font-size: 27px;
+    }
+
+
+    .subscribe-content p {
+        font-size: 14px;
+    }
+
+
+    .subscribe-form {
+        height: 65px;
+
+        padding: 7px;
+    }
+
+
+    .subscribe-form input {
+        font-size: 15px;
+
+        padding: 0 12px;
+    }
+
+
+    .subscribe-form button {
+        width: 105px;
+
+        height: 51px;
+
+        font-size: 14px;
+    }
+
+
+    .footer-column h3 {
+        font-size: 20px;
+    }
+
+
+    .footer-column a {
+        font-size: 16px;
+
+        margin-bottom: 14px;
+    }
+
+
+    .footer-bottom {
+        padding: 30px 25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+    }
+
+
+    .footer-bottom p {
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================
+   Navigation
+========================= */
+
+.nav-center {
+    margin-left: 42px;
+}
+
+.nav-link {
+    font-size: 18px;
+    font-weight: 400;
+
+    text-decoration: none;
+    color: #333333;
+
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #000000;
+}
+
+
+/* =========================
+   Login / Signup
+========================= */
+
+.nav-actions {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-button {
+    min-width: 76px;
+    height: 40px;
+
+    padding: 0 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #000000;
+    color: #ffffff;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    transition: background-color 0.2s ease;
+}
+
+.nav-button:hover {
+    background-color: #222222;
+}

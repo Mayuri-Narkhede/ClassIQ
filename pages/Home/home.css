@@ -1,0 +1,831 @@
+/* =====================================================
+   CLASSIQ HOME PAGE
+   ===================================================== */
+
+
+/* ================= HERO SECTION ================= */
+
+.hero-section {
+    width: 100%;
+    background: #f7f7f7;
+}
+
+.hero-container {
+    max-width: 1200px;
+    min-height: 400px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 55px 60px 45px;
+}
+
+
+/* ================= HERO CONTENT ================= */
+
+.hero-content {
+    width: 52%;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-family: Poppins;
+    font-weight: 300;
+    font-style: Light;
+    font-size: 68px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: -3%;
+
+    /* margin: 0;
+
+    font-size: 68px;
+    line-height: 1.08;
+    font-weight: 400;
+
+    color: #111111;
+    letter-spacing: -1.5px; */
+}
+
+.hero-content h1 span {
+    position: relative;
+    font-weight: 700;
+}
+
+
+/* Green underline below ClassIQ */
+
+.hero-content h1 span::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -4px;
+
+    width: 100%;
+    height: 4px;
+
+    background: #b7ff3c;
+
+    border-radius: 5px;
+
+    transform: rotate(-2deg);
+}
+
+
+/* ================= DESCRIPTION ================= */
+
+.hero-description {
+    width: 562px;
+
+    margin-top: 22px;
+    margin-bottom: 24px;
+
+    font-size: 16px;
+    line-height: 1.5;
+
+    color: #96989A;
+}
+
+
+/* ================= BUTTON ================= */
+
+.hero-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 17px;
+
+    background: #C2F578;
+    color: #000000;
+
+    border-radius: 5px;
+
+    font-size: 17px;
+    font-weight: 400;
+
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+
+    font-family: 'Poppins', sans-serif;
+    font-style: 'Regular';
+
+}
+
+.hero-button:hover {
+    background: #a8ef30;
+    transform: translateY(-1px);
+}
+
+
+/* ================= HERO IMAGE ================= */
+
+.hero-image-container {
+    position: relative;
+
+    width: 45%;
+    height: 330px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+/* Light green glow */
+
+.hero-glow {
+    position: absolute;
+
+    width: 343px;
+    height: 365px;
+
+    right: 93px;
+    bottom: 20px;
+
+    background: #ecffd8;
+
+    border-radius: 50%;
+
+    filter: blur(20px);
+
+    opacity: 0.9;
+}
+
+
+/* Character */
+
+.hero-character {
+    position: relative;
+
+    z-index: 2;
+
+    width: 300px;
+    max-height: 320px;
+
+    object-fit: contain;
+
+    align-self: flex-end;
+}
+
+
+/* ================= DECORATIONS ================= */
+
+.hero-decoration {
+    position: absolute;
+
+    z-index: 3;
+
+    color: #111111;
+
+    font-size: 26px;
+
+    font-weight: 300;
+
+    transform: rotate(-35deg);
+}
+
+.decoration-one {
+    left: 35px;
+    top: 85px;
+}
+
+.decoration-two {
+    right: 10px;
+    top: 70px;
+
+    font-size: 20px;
+
+    transform: rotate(25deg);
+}
+
+
+/* =====================================================
+   TRUSTED COMPANIES
+   ===================================================== */
+
+.trusted-section {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 30px 60px 35px;
+
+    text-align: center;
+}
+
+.trusted-section h2 {
+    margin: 0 0 25px;
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 500;
+    color: #565656;
+    line-height: 160%;
+    letter-spacing: 2%;
+
+}
+
+
+/* ================= COMPANY LOGOS ================= */
+
+.company-logos {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+.company-logo {
+    color: #b1b1bb;
+
+    font-weight: 600;
+
+    opacity: 0.85;
+}
+
+
+/* Individual logo styling */
+
+.google {
+    font-size: 25px;
+
+    font-weight: 600;
+}
+
+.netflix {
+    font-size: 25px;
+
+    letter-spacing: 1px;
+}
+
+.airbnb {
+    font-size: 25px;
+
+    font-weight: 600;
+}
+
+.amazon {
+    font-size: 25px;
+
+    font-weight: 600;
+}
+
+.facebook {
+    font-size: 35px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   CERTIFIED SECTION
+   ===================================================== */
+
+.certified-section {
+    text-align: center;
+
+    padding: 25px 20px 70px;
+}
+
+.certified-section p {
+    margin: 0;
+
+    font-size: 22px;
+    font-weight: 500;
+    color: #565656;
+}
+
+.certified-section strong {
+    font-size: 22px;
+    font-weight: 800;
+    color: #222222;
+}
+
+/* =====================================================
+   COURSE CATEGORY SECTION
+===================================================== */
+
+.course-category-section {
+    width: 100%;
+
+    padding: 25px 20px 70px;
+}
+
+
+.course-cards {
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 0 60px;
+
+    box-sizing: border-box;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 64px;
+    
+}
+
+
+/* ================= COURSE CARD ================= */
+
+.course-card {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+    box-shadow: var(--sds-size-depth-0) var(--sds-size-depth-025) var(--sds-size-depth-100) var(--sds-size-depth-0) var(--sds-color-black-100);
+    box-shadow: var(--sds-size-depth-0) var(--sds-size-depth-025) var(--sds-size-depth-100) var(--sds-size-depth-0) var(--sds-color-black-200);
+    background: #f7f7f7;
+    width: 333px;
+    height: 280px;
+    opacity: 1;
+    border-radius: 24px;
+
+}
+
+
+/* ================= COURSE ICON ================= */
+
+.course-icon {
+    width: 45px;
+    height: 45px;
+
+    margin-bottom: 7px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: var(--sds-size-depth-0) var(--sds-size-depth-025) var(--sds-size-depth-100) var(--sds-size-depth-0) var(--sds-color-black-100);
+    box-shadow: var(--sds-size-depth-0) var(--sds-size-depth-025) var(--sds-size-depth-100) var(--sds-size-depth-0) var(--sds-color-black-200);
+
+}
+
+
+.course-icon span {
+    font-size: 7px;
+    color: #222222;
+}
+
+
+/* ================= COURSE TITLE ================= */
+
+.course-card h3 {
+    margin: 15px 0 8px;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: #373636;
+    text-align: center;
+}
+
+
+/* ================= COURSE BUTTON ================= */
+
+.course-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 124px;
+    height: 37px;
+    margin: 11px 0 0 0;
+
+    background: #C2F578;
+
+    border-radius: 8px;
+
+    color: #373636;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+
+    transition: all 0.2s ease;
+}
+
+
+.course-button:hover {
+    background: #a9ee32;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   ALL-IN-ONE SOLUTION
+===================================================== */
+
+.solution-section {
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 80px 60px;
+
+    box-sizing: border-box;
+}
+
+
+.solution-container {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    column-gap: 80px;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   SOLUTION IMAGE
+===================================================== */
+
+.solution-image-wrapper {
+    position: relative;
+
+    width: 506px;
+    height: 510px;
+    overflow: hidden;
+
+    flex-shrink: 0;
+}
+
+
+/* Light grey square background */
+
+.solution-image-background {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 506px;
+    height: 510px;
+    background: #f7f7f7;
+
+    border-radius: 9px;
+}
+
+
+/* Character image */
+
+.solution-character {
+    position: absolute;
+
+    z-index: 2;
+
+    width: 404px;
+    height: 427px;
+    left: 42px;
+
+    bottom: -2px;
+
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   SOLUTION CONTENT
+===================================================== */
+
+.solution-content {
+    width: auto;
+}
+
+
+.solution-content h2 {
+    margin: 0 0 8px;
+
+    font-size: 36px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #373636;
+}
+
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+.solution-features {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin-bottom: 14px;
+}
+
+
+.solution-feature {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 10px;
+
+    color: #555555;
+}
+
+.solution-feature span {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 22px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #545454;
+
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    background-color: #ededf0;
+  
+  /* Semi-transparent light border to blend smoothly */
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  
+  /* Soft spread shadow for depth without harsh lines */
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.08),
+    0 4px 10px rgba(0, 0, 0, 0.04);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 7px;
+
+    color: #222222;
+}
+
+
+/* =====================================================
+   JOIN BUTTON
+===================================================== */
+
+.join-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 20px;
+
+    gap: 5px;
+
+    min-width: 200px;
+
+    height: 60px;
+
+    padding: 0 11px;
+
+    background: #C2F578;
+
+    border-radius: 9px;
+
+    color: #3E3E3E;
+
+    text-decoration: none;
+
+    font-size: 24px;
+
+    font-weight: 600;
+
+    font-family: 'Poppins', sans-serif;
+
+    transition: all 0.2s ease;
+}
+
+
+.join-button:hover {
+    background: #a9ee32;
+
+    transform: translateY(-1px);
+}
+
+
+.join-button span {
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
+   @media (max-width: 800px) {
+
+    .course-cards {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .solution-container {
+        gap: 30px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .course-category-section {
+        padding-top: 10px;
+    }
+
+
+    .course-cards {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 18px;
+    }
+
+
+    .course-card {
+        width: 190px;
+    }
+
+
+    .solution-container {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .solution-content {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    .solution-features {
+        align-items: flex-start;
+
+        text-align: left;
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .hero-container {
+        padding: 45px 35px;
+
+        min-height: auto;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-description {
+        width: 100%;
+    }
+
+    .hero-image-container {
+        width: 45%;
+    }
+
+    .hero-character {
+        width: 250px;
+    }
+
+    .company-logos {
+        gap: 25px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .hero-container {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 45px 25px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-image-container {
+        width: 100%;
+
+        height: 300px;
+
+        margin-top: 25px;
+    }
+
+    .hero-character {
+        width: 270px;
+    }
+
+    .company-logos {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .hero-content h1 {
+        font-size: 31px;
+    }
+
+    .hero-description {
+        font-size: 11px;
+    }
+
+    .hero-image-container {
+        height: 270px;
+    }
+
+    .hero-character {
+        width: 240px;
+    }
+
+    .trusted-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .company-logo {
+        font-size: 18px;
+    }
+}

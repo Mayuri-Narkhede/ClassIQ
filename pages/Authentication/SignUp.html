@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SignUp - ClassIQ</title>
+
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="./signup.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div id="navbar"></div>
+
+
+    <!-- Signup Section -->
+    <main class="signup-page">
+
+        <div class="signup-card">
+
+            <h1>SignUp</h1>
+
+            <form id="signupForm" novalidate>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                    >
+
+                    <div class="error-tooltip">
+                        <span class="icon-box">!</span>
+                        <span class="error-text">Please fill out this field.</span>
+                    </div>
+                </div>
+
+
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="Enter your full name"
+                    >
+
+                    <div class="error-tooltip">
+                        <span class="icon-box">!</span>
+                        <span class="error-text">Please fill out this field.</span>
+                    </div>
+                </div>
+
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+
+                    <div class="password-wrapper">
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="passwordToggle"
+                            aria-label="Show password"
+                        >
+                            👁
+                        </button>
+                    </div>
+
+                    <div class="error-tooltip">
+                        <span class="icon-box">!</span>
+                        <span class="error-text">Please fill out this field.</span>
+                    </div>
+                </div>
+
+
+                <!-- Signup Button -->
+                <button type="submit" class="signup-button">
+                    Sign Up
+                </button>
+
+            </form>
+
+
+            <!-- Login -->
+            <p class="login-text">
+                Already have an account?
+                <a href="../Authentication/Signin.html">Login</a>
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+
+    <script src="signup.js"></script>
+    <script src="../../js/common.js"></script>
+
+</body>
+</html>
