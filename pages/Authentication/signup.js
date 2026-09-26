@@ -1,48 +1,14 @@
 /* ================================
-   Load Common Components
+   Signup Form Elements
 ================================ */
-
-async function loadComponent(elementId, filePath) {
-
-    try {
-
-        const response = await fetch(filePath);
-
-        if (!response.ok) {
-            throw new Error(`Unable to load ${filePath}`);
-        }
-
-        const html = await response.text();
-
-        document.getElementById(elementId).innerHTML = html;
-
-    } catch (error) {
-
-        console.error(error);
-
-    }
-}
-
-
-loadComponent("navbar", "../Components/Navbar.html");
-loadComponent("footer", "../Components/Footer.html");
-
-
-/* ================================
-   Signup Form
-================================ */
-
 const signupForm = document.getElementById("signupForm");
-
 const email = document.getElementById("email");
 const fullName = document.getElementById("fullName");
 const password = document.getElementById("password");
 
-
 /* ================================
    Validation Helpers
 ================================ */
-
 function showError(input, message) {
     const formGroup = input.closest(".form-group");
     const errorText = formGroup.querySelector(".error-text");
@@ -59,75 +25,33 @@ function hideError(input) {
     formGroup.classList.remove("error");
 }
 
-
 /* ================================
    Email Validation
 ================================ */
-
 function validateEmail() {
-
     const emailValue = email.value.trim();
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    /*
-       Example valid:
-       abc@gmail.com
-       test123@gmail.com
+    if (emailValue === "") {
+        showError(email, "Please fill out this field.");
+        return false;
+    }
 
-       Invalid:
-       abc@
-       abc@gmail
-       abc.com
-    */
-
-    const emailRegex =
-        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-
-        if (emailValue === "") {
-            showError(email, "Please fill out this field.");
-            return false;
-        }
-    
-        if (!emailRegex.test(emailValue)) {
-            showError(email, "Please enter a valid email address.");
-            return false;
-        }
-
+    if (!emailRegex.test(emailValue)) {
+        showError(email, "Please enter a valid email address.");
+        return false;
+    }
 
     hideError(email);
-
     return true;
 }
-
 
 /* ================================
    Name Validation
 ================================ */
-
 function validateName() {
-
     const nameValue = fullName.value.trim();
-
-
-    if (nameValue === "") {
-
-        showError(fullName);
-
-        return false;
-    }
-
-
-    /*
-       Name should contain only letters and spaces.
-       Allows names such as:
-
-       Mayuri
-       Mayuri Narkhede
-       John Smith
-    */
-
     const nameRegex = /^[A-Za-z]+(?:\s+[A-Za-z]+)*$/;
-
 
     if (nameValue === "") {
         showError(fullName, "Please fill out this field.");
@@ -139,34 +63,16 @@ function validateName() {
         return false;
     }
 
-
     hideError(fullName);
-
     return true;
 }
-
 
 /* ================================
    Password Validation
 ================================ */
-
 function validatePassword() {
-
     const passwordValue = password.value;
-
-
-    /*
-       Password requirements:
-
-       Minimum 8 characters
-       At least 1 uppercase
-       At least 1 number
-       At least 1 special character
-    */
-
-    const passwordRegex =
-        /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>_\-+=[\]\\;'\/`~]).{8,}$/;
-
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>_\-+=[\]\\;'\/`~]).{8,}$/;
 
     if (passwordValue === "") {
         showError(password, "Please fill out this field.");
@@ -179,123 +85,98 @@ function validatePassword() {
             "Password must be 8+ chars with uppercase, number, & special char."
         );
         return false;
-        }
-
+    }
 
     hideError(password);
-
     return true;
 }
 
+/* ================================
+   Signup Form Submission
+================================ */
+if (signupForm) {
+    signupForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const isEmailValid = validateEmail();
+        const isNameValid = validateName();
+        const isPasswordValid = validatePassword();
+
+        if (!isEmailValid || !isNameValid || !isPasswordValid) {
+            window.showToast("Please fix the errors in the form.", "error");
+            return;
+        }
+
+        const emailValue = email.value.trim().toLowerCase();
+        const passwordValue = password.value;
+        const nameValue = fullName.value.trim();
+
+        // Retrieve existing users list from localStorage
+        const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+        // Check if user already registered
+        const userExists = existingUsers.some(user => user.email === emailValue);
+
+        if (userExists) {
+            window.showToast("An account with this email already exists!", "error");
+            return;
+        }
+
+        // Save new user object
+        const newUser = {
+            name: nameValue,
+            email: emailValue,
+            password: passwordValue
+        };
+
+        existingUsers.push(newUser);
+        localStorage.setItem("users", JSON.stringify(existingUsers));
+
+        window.showToast("Sign up successful! Redirecting to login...", "success");
+
+        // Redirect to Signin page after delay
+        setTimeout(() => {
+            window.location.href = "../Authentication/signin.html";
+        }, 1500);
+    });
+}
 
 /* ================================
-   Submit
+   Real-time & Input Event Listeners
 ================================ */
+if (email && fullName && password) {
+    email.addEventListener("blur", validateEmail);
+    fullName.addEventListener("blur", validateName);
+    password.addEventListener("blur", validatePassword);
 
-signupForm.addEventListener("submit", function (event) {
+    email.addEventListener("input", function () {
+        if (email.value.trim() !== "") hideError(email);
+    });
 
-    event.preventDefault();
+    fullName.addEventListener("input", function () {
+        if (fullName.value.trim() !== "") hideError(fullName);
+    });
 
-
-    const isEmailValid = validateEmail();
-    const isNameValid = validateName();
-    const isPasswordValid = validatePassword();
-
-
-    if (
-        !isEmailValid ||
-        !isNameValid ||
-        !isPasswordValid
-    ) {
-
-        return;
-    }
-
-
-    /*
-       All validations passed.
-       Backend/API integration can be added here.
-    */
-
-    window.location.href = "../Authentication/Signin.html";
-
-});
-
-
-/* ================================
-   Real-time Validation
-================================ */
-
-email.addEventListener("blur", validateEmail);
-
-fullName.addEventListener("blur", validateName);
-
-password.addEventListener("blur", validatePassword);
-
-
-/* ================================
-   Remove Error While Typing
-================================ */
-
-email.addEventListener("input", function () {
-
-    if (email.value.trim() !== "") {
-        hideError(email);
-    }
-
-});
-
-
-fullName.addEventListener("input", function () {
-
-    if (fullName.value.trim() !== "") {
-        hideError(fullName);
-    }
-
-});
-
-
-password.addEventListener("input", function () {
-
-    if (password.value !== "") {
-        hideError(password);
-    }
-
-});
-
+    password.addEventListener("input", function () {
+        if (password.value !== "") hideError(password);
+    });
+}
 
 /* ================================
    Show / Hide Password
 ================================ */
+const passwordToggle = document.getElementById("passwordToggle");
 
-const passwordToggle =
-    document.getElementById("passwordToggle");
-
-
-passwordToggle.addEventListener("click", function () {
-
-    if (password.type === "password") {
-
-        password.type = "text";
-
-        passwordToggle.textContent = "🙈";
-
-        passwordToggle.setAttribute(
-            "aria-label",
-            "Hide password"
-        );
-
-    } else {
-
-        password.type = "password";
-
-        passwordToggle.textContent = "👁";
-
-        passwordToggle.setAttribute(
-            "aria-label",
-            "Show password"
-        );
-
-    }
-
-});
+if (passwordToggle && password) {
+    passwordToggle.addEventListener("click", function () {
+        if (password.type === "password") {
+            password.type = "text";
+            passwordToggle.textContent = "🙈";
+            passwordToggle.setAttribute("aria-label", "Hide password");
+        } else {
+            password.type = "password";
+            passwordToggle.textContent = "👁";
+            passwordToggle.setAttribute("aria-label", "Show password");
+        }
+    });
+}
