@@ -274,6 +274,10 @@
     flex-shrink: 0;
 }
 
+.error-text {
+    color: red;
+}
+
 /* Text Styling */
 .error-tooltip .error-text {
     color: #000000;
